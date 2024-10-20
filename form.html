@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idola Saya - Formulir Lelouch vi Britannia</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #2E2E2E;
+            color: white;
+        }
+        header {
+            background-color: #8B0000; /* Merah Tua */
+            color: white;
+        }
+        footer {
+            background-color: #5C5C5C; /* Abu-abu Tua */
+            color: white;
+        }
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #5C5C5C; /* Abu-abu Tua */
+            padding-top: 60px;
+            transition: 0.3s;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #8B0000;
+        }
+        .sidebar .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 36px;
+        }
+        #main-content {
+            transition: margin-left 0.3s;
+            padding: 20px;
+        }
+        .burger-menu {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            display: none;
+        }
+        h1, h2 {
+            color: #FFD700; /* Warna emas untuk judul */
+        }
+        .form-container {
+            background-color: #8B0000; /* Merah Tua */
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        label {
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .burger-menu {
+                display: block;
+            }
+        }
+        @media (min-width: 768px) {
+            .sidebar {
+                left: 0;
+                width: 250px;
+            }
+            #main-content {
+                margin-left: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div id="mySidebar" class="sidebar">
+        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+        <a href="index.html" class="nav-link">Halaman Utama</a>
+        <a href="form.html" class="nav-link active">Formulir</a>
+        <a href="table.html" class="nav-link">Tabel</a>
+    </div>
+
+    <!-- Main content -->
+    <div id="main-content">
+        <!-- Header -->
+        <header class="row p-3 d-flex align-items-center" itemscope itemtype="http://schema.org/WebSite">
+            <span class="burger-menu" onclick="openNav()">&#9776;</span>
+            <div class="header-content">
+                <img src="lelouch.jpg" alt="Lelouch vi Britannia">
+                <h1 itemprop="name">Lelouch vi Britannia</h1>
+            </div>
+        </header>
+
+        <!-- Formulir -->
+        <main class="container mt-4">
+            <h2>Formulir Pendaftaran Penggemar Lelouch vi Britannia</h2>
+
+            <div class="form-container">
+                <form action="form.html" method="GET">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="nama" name="nama" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
+                        <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Jenis Kelamin</label>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="jenis_kelamin" id="pria" value="Pria" required>
+                                <label class="form-check-label" for="pria">Pria</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="jenis_kelamin" id="wanita" value="Wanita" required>
+                                <label class="form-check-label" for="wanita">Wanita</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Hobi</label>
+                        <div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="hobi_membaca" name="hobi[]" value="Membaca">
+                                <label class="form-check-label" for="hobi_membaca">Membaca</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="hobi_olahraga" name="hobi[]" value="Olahraga">
+                                <label class="form-check-label" for="hobi_olahraga">Olahraga</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Kata Sandi</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="row text-center p-3" style="margin-top: 20px;">
+        <p>&copy; 2024 Idola Saya - Lelouch vi Britannia. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Sidebar -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.left = "0";
+            document.getElementById("main-content").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.left = "-250px";
+            document.getElementById("main-content").style.marginLeft = "0";
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

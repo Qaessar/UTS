@@ -1,0 +1,161 @@
+/* Global Styles */
+body {
+    background-color: #2E2E2E;
+    color: white;
+}
+
+/* Header */
+header {
+    background-color: #8B0000; /* Merah Tua */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.header-content img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+h1, h2 {
+    color: #FFD700; /* Warna emas untuk judul */
+}
+
+a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #5C5C5C; /* Abu-abu Tua */
+    padding-top: 60px;
+    transition: 0.3s;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #8B0000;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 36px;
+}
+
+#main-content {
+    transition: margin-left 0.3s;
+    padding: 20px;
+}
+
+.burger-menu {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    display: none;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #343a40;
+    color: white;
+    padding: 10px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #540000;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #c00d0d;
+}
+
+tbody tr:hover {
+    background-color: #444444;
+}
+
+tbody td {
+    padding: 10px;
+    border: 1px solid #5a0505;
+}
+
+.table-responsive {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* Footer */
+footer {
+    background-color: #5C5C5C; /* Abu-abu Tua */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #FFD700; /* Warna emas */
+}
+
+footer .social-icons {
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        left: 0;
+        width: 250px;
+    }
+    #main-content {
+        margin-left: 250px;
+    }
+}
